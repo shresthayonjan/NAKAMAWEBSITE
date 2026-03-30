@@ -1,0 +1,168 @@
+/* Media Queries for Responsiveness */
+/* Tablet and smaller devices */
+@media (max-width: 900px) {
+  
+/* CSS for Navs */
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: right;
+    padding: 6px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 4px;
+    text-align: right;
+    width: auto;
+    background-color: transparent;
+    position: absolute;
+    top: 60px;
+    right: 25px;
+  }
+
+  .nav-links a {
+    color: #1e3a8a;
+    font-weight: bold;
+    display: block;
+    font-size: 12px;
+  }
+
+  .logo img {
+    max-width: 100%;
+    height: auto;
+    width: 130px;
+  }
+
+  .hamburger-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .hamburger {
+    display: block;
+    margin-right: 20px;
+  }
+/* CSS for Contsct btn page
+.contact-btn a {
+    background-color: #1e3a8a;
+    float: right;
+    color: #ffffff;
+    padding: 6px 12px;
+    border: 2px solid #1e40af;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+  }
+    */
+
+/* CSS for Slides page*/
+
+.slide-navigation__txt {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.slide-navigation__txt ul {
+  list-style: none;
+  padding-top: 7px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.slide-navigation__txt li {
+  text-transform: uppercase;
+  letter-spacing: none;
+  font-size: 9px;
+  font-weight: 600;
+  color: #6c6e77;
+}
+
+.slide-navigation__txt li span {
+  cursor: pointer;
+  transition: all 0.5s ease;
+  display: block;
+}
+
+.slide-navigation__txt li span.active {
+  transform: scale(1.1, 1.1);
+  color: #df0000;
+}
+.slide-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 2rem 2.5rem; /* Adjust padding to make content fit properly */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-content h1 {
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+  font-size: 100px; /* Adjusted size for better visibility on full screen */
+  text-align: center;
+  opacity: 0.80;
+  position: relative; /* Ensure positioning context */
+  z-index: 2; /* Bring h1 in front */
+}
+
+.slide-content h2 {
+  color: #d61818;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 30px; /* Slightly reduced font size for better readability */
+  max-width: 80%;
+  margin: 0;
+  margin-top: -30px; /* Adjusted margin for better alignment */
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Place h2 behind h1 */
+}
+
+.slide-txt {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 20px; /* Reduced margin for better screen fit */
+  text-align: center;
+  z-index: 0; /* Place slide-txt behind h1 and h2 */
+}
+
+.slide-txt p {
+  margin: 0 auto;
+  max-width: 60%;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 12px; /* Adjusted font size for better readability */
+  font-weight: bold;
+  line-height: 1.4;
+}
+/* CSS for Welcome page*/
+  .welcome-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .welcome-text {
+    padding: 0;
+  }
+
+  .welcome-image img {
+    max-width: 100%;  /* Ensure image takes full width on small screens */
+  }
+
+  
+}
+

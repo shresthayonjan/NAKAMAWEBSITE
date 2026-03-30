@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nakama Educational Consultancy</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+ <header class="navbar">
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+       <!-- <img src="images/NAKAMA Web Logo Png-01.png" alt="Nakama Educational Consultancy Logo"> -->
+        <img src="NAKAMA Web Logo Png-02.png" alt="Nakama Educational Consultancy Logo"> 
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="About.html">About Us</a>
+      <a href="Programs.html">Programs / Courses</a>
+      <a href="Services.html">Services</a>
+    </nav>
+    <div class="header-right-box">
+      <div class="header-right-icon">
+        <a href="Contact.html" aria-label="Contact Us">
+          <!-- Simple message icon -->
+          <svg width="40" height="40" fill="#333" viewBox="0 0 24 24">
+            <path d="M21 6.5a2.5 2.5 0 0 0-2.5-2.5h-13A2.5 2.5 0 0 0 3 6.5v11A2.5 2.5 0 0 0 5.5 20H6v3l3-3h9.5a2.5 2.5 0 0 0 2.5-2.5v-11zM5.5 5h13A1.5 1.5 0 0 1 20 6.5V7H4v-.5A1.5 1.5 0 0 1 5.5 5zm13 13H8.83L7 19.83V18H5.5A1.5 1.5 0 0 1 4 16.5V8h16v8.5a1.5 1.5 0 0 1-1.5 1.5z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="header-right-content">
+        <span>Any queries?</span>
+        <h4><a href="tel:+977-01-5914797">01-5914797</a></h4>
+      </div>
+    </div>
+  </header>
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+        <div class="contact-left-title">
+        </div>
+        <input type="hidden" name="access_key" value="b674ab09-a94c-4f33-bb64-2f320ddc575f">
+        <input type="text" name="name" placeholder="Full Name" class="contact-inputs" required>
+        <input type="phone no" name="phone no" placeholder="Phone No." class="contact-inputs" required>
+        <input type="email" name="email" placeholder="E-mail" class="contact-inputs" required>
+        <textarea name="message" placeholder="Message" class="contact-inputs"required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="contact-info">
+      <h2>CONTACT INFO</h2>
+      <p class="company">Nakama Educational Consultancy</p>
+
+      <div class="info-block">
+        <div class="icon">
+          <a href="callto:+977-01-5914797">
+          <img src="Phone.png" alt="Phone Icon">
+        </div>
+        <div>
+          <p><strong><a href="tel:+977015914797">+977-01-5914797</a></strong></p>
+          <p><strong><a href="tel:+9779851325632">+977-9851325632</a>, <a href="tel:+9779851325627">9851325627</a></strong></p>
+          </div>
+      </div>
+
+      <div class="info-block">
+  <div class="icon">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nakama.edu22@gmail.com" target="_blank">
+      <img src="Mail.png" alt="Mail Icon">
+    </a>
+  </div>
+  <div>
+    <p>
+      <strong>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nakama.edu22@gmail.com" target="_blank">
+          nakama.edu22@gmail.com
+        </a>
+      </strong>
+    </p>
+  </div>
+</div>
+
+
+
+      <div class="info-block">
+        <div class="icon">
+          <a href="https://maps.app.goo.gl/tF7meHD1cDtWc3U18" target="_blank">
+            <img src="Location.png" alt="Location Icon">
+          </a>
+                  </div>
+        <div>
+            <p>
+              <strong>
+                <a href="https://maps.app.goo.gl/tF7meHD1cDtWc3U18" target="_blank">
+                  Chabahil-7, Budhanga Marg, Kathmandu, Nepal
+                </a>
+              </strong>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Google Maps Embed -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29837.18847891081!2d85.32754328476561!3d27.72040435515394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a3997a1215%3A0xfb029c3e492336d8!2sNakama%20Educational%20Consultancy!5e1!3m2!1sen!2snp!4v1743943889904!5m2!1sen!2snp" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>        
+</div>
+<!-- Footer Starts-->
+<footer class="footer">
+    <!-- hidden -->
+    <!--
+    <nav class="footer-nav">
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Team</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+      <a href="#">Terms</a>
+    </nav>
+    -->
+
+  <!-- html for footer icons starts -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100074857266434" target="_blank">
+          <img src="facebook.svg" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/nakama.edu22/" target="_blank">
+          <img src="instagram.svg" alt="Instagram" />
+        </a>
+        <a href="https://maps.app.goo.gl/xXG3BBq3Eip5C7Vo9" target="_blank">
+          <img src="maps.svg" alt="Maps" />
+        </a>
+        <a href="https://www.tiktok.com/@nakama.edu22?_t=ZS-8vPy3jFwOgx&_r=1" target="_blank">
+          <img src="tiktok.svg" alt="Tiktok" />
+        </a>
+        <a href="Blank" target="_blank">
+          <img src="whatsapp.svg" alt="Whatsapp" />
+        </a>
+        <a href="Blank" target="_blank">
+          <img src="x.svg" alt="X" />
+        </a>
+      </div>
+  <!-- html for footer icons ends -->
+  <p class="copyright">
+      © 2025 Nakama Educational Consultancy. All rights reserved. <br>
+      Designed by: Yonjan Shrestha
+    </p>
+  </footer>
+<!-- Footer Ends-->
+<script>
+    document.getElementById('hamburger').addEventListener('click', function () {
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+      } else {
+        navLinks.style.display = 'flex';
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
