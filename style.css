@@ -365,15 +365,19 @@ a {
 @media screen and (max-width: 480px) {
   .slide-content h1 {
     font-size: 36px;
+    margin-bottom: 10px;
+    
   }
   .slide-content h2 {
     font-size: 18px;
   }
   .slide-txt p {
-    font-size: 0.8rem;
+    font-size: 14px;
     max-width: 95%;
   }
+  
 }
+
 
 /* === GENERAL CONTAINER === */
 .container {
