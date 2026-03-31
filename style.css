@@ -489,6 +489,33 @@ a {
   display: inline;
 }
 
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1000px) {
+  .container {
+    padding: 60px 40px;
+  }
+
+  .about-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-block.reverse {
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 240px;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
+  
+  .reverse .image-wrapper {
+    border-radius: 25px; /* Keeps curves consistent when stacked on mobile */
+  }
+}
+
 /* =========================================
    1. DESKTOP & GENERAL STYLES (Base)
    ========================================= */
@@ -640,7 +667,6 @@ a {
     bottom: 8px;
   }
 }
-
 
 /*CSS For Contact Form Starts here*/
 .contact-container {
