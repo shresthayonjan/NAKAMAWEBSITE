@@ -1,44 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "poppins", sans-serif;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  /* Added to prevent horizontal scrolling on mobile */
+  overflow-x: hidden; 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* --- Navbar Base --- */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo img {
-    height: auto;
-    width: 180px;
-    display: block;
+  height: auto;
+  width: 180px;
+  display: block;
 }
 
-
-/* --- Base Desktop Styles  --- */
+/* Container for the icon */
 .header-right-box {
   display: inline-flex;
   align-items: center;
@@ -51,22 +51,17 @@
   justify-content: center;
   text-decoration: none;
   transition: transform 0.2s ease-in-out;
-  
-  /* 1. Remove the default gray tap highlight on mobile Chrome/Safari */
-  -webkit-tap-highlight-color: transparent;
 }
 
 .header-right-icon svg {
-  fill: #1e40af;
+  fill:#1e40af;
   transition: fill 0.3s ease, filter 0.3s ease;
-  /* Ensure the icon doesn't shrink or grow weirdly */
-  flex-shrink: 0; 
 }
 
-/* Hover/Active States */
+/* Hover Effects */
 .header-right-icon a:hover svg {
   fill: #e11d48;
-  filter: drop-shadow(0 0 5px rgba(225, 29, 72, 0.3));
+  filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.3));
 }
 
 .header-right-icon a:hover {
@@ -74,134 +69,100 @@
 }
 
 .header-right-icon a:active {
-  transform: scale(0.95); /* Better feedback for touch than translateY */
+  transform: translateY(0);
 }
-
-/* --- Mobile Compatibility (Screens smaller than 768px) --- */
-@media (max-width: 768px) {
-  .header-right-icon a {
-    /* 2. Increase touch target size to at least 48x48px (UX best practice) */
-    width: 48px;
-    height: 48px;
-  }
-  
-  .header-right-icon svg {
-    /* 3. Slightly scale down the icon if it feels too big for mobile headers */
-    width: 32px;
-    height: 32px;
-  }
-
-  /* 4. Disable hover effects on touch devices to prevent "sticky" hover states */
-  @media (hover: none) {
-    .header-right-icon a:hover {
-      transform: none;
-    }
-    .header-right-icon a:hover svg {
-      filter: none;
-    }
-  }
-}
-
-
-/* --- Base Mobile Styles  --- */
-
-
 
 /* --- Navigation Links (Desktop) --- */
 .nav-links {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .nav-links a {
-    font-size: 18px;
-    color: #1e40af;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  font-size: 18px;
+  color: #1e40af;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #e11d48;
-    transform: translateY(-2px);
+  color: #e11d48;
+  transform: translateY(-2px);
 }
 
 /* --- Header Right Section --- */
 .header-right-box {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .header-right-content span {
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
-    color: #555;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
 }
 
 .header-right-content h4 a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    color: #1e40af;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1e40af;
 }
 
 .hamburger {
-    display: none; /* Hidden on Desktop */
-    cursor: pointer;
-    width: 30px;
-    margin-left: px;
+  display: none; 
+  cursor: pointer;
+  width: 30px;
+  margin-left: 15px;
 }
 
 .hamburger img {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
 }
 
 /* --- Responsive View --- */
 @media (max-width: 768px) {
-    .hamburger {
-        display: block; 
-    }
+  .hamburger {
+      display: block; 
+  }
 
-    .nav-links {
-        display: none; /* Hidden by default */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        gap: 20px;
-    }
+  .nav-links {
+      display: none; 
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      gap: 20px;
+      z-index: 999; /* FIX: Keeps menu above slider on mobile */
+  }
 
-    /* This class will be toggled via JS */
-    .nav-links.active {
-        display: flex;
-    }
+  .nav-links.active {
+      display: flex;
+  }
 
-    .header-right-content {
-        display: none; /* Hide phone text on small screens */
-    }
-    
-    .logo img {
-        width: 140px;
-    }
+  .header-right-content {
+      display: none; 
+  }
+  
+  .logo img {
+      width: 140px;
+  }
 }
-
-
-
-
 
 /* Slider Styles */
 .slider-wrapper {
   position: relative;
   width: 100%;
-  height: 80vh; /* Adjust height */
+  height: 80vh; 
   margin: auto;
   overflow: hidden;
 }
@@ -226,9 +187,8 @@
   position: relative;
   display: block;
   width: 100%;
-  height: 100vh; /* keeps layout stable */
+  height: 100vh; 
   overflow: hidden;
- 
 }
 
 .slides-container {
@@ -239,10 +199,8 @@
   justify-content: center;
   align-items: center;
   will-change: transform;
-  
 }
 
-/* Navigation text container */
 .slide-navigation__txt {
   display: flex;
   justify-content: center;
@@ -251,10 +209,9 @@
   flex-wrap: wrap;
   gap: 15px;
   backface-visibility: hidden;
-   margin-top: 10px;
+  margin-top: 10px;
 }
 
-/* Remove default bullets & make side by side */
 .slide-navigation__txt ul {
   list-style: none;
   display: flex;
@@ -266,14 +223,13 @@
 }
 
 .slide-navigation__txt li {
-  display: inline-block; /* horizontal layout */
+  display: inline-block; 
   letter-spacing: 1px;
   font-size: 13px;
   font-weight: 700;
   color: #6c6e77;
 }
 
-/* Clickable text */
 .slide-navigation__txt li span {
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -286,36 +242,32 @@
   font-weight: 800;
 }
 
-
-/* Slide */
 .slide { 
   position: absolute; 
   display: flex; 
   flex-direction: column; 
   justify-content: center; 
   align-items: center; 
-  width: 100%; /* Full width */ 
-  height: 100%; /* Full height */ 
+  width: 100%; 
+  height: 100%; 
   opacity: 0; 
   visibility: hidden; 
   overflow: hidden; 
   z-index: 1; 
 }
-/* Active Slide */
+
 .slide.active {
-   opacity: 1;
-    visibility: visible; 
-    z-index: 5; 
-    transition: opacity 0.05s ease-in-out;
-   }
+  opacity: 1;
+  visibility: visible; 
+  z-index: 5; 
+  transition: opacity 0.05s ease-in-out;
+}
 
-/* Slide Image Smooth Transition */
 .slide img { 
-  width: 100%; /* Fill the screen width */ 
-  height: 100%; /* Fill the screen height */
-  object-fit: cover; /* Ensure the image covers the screen */ }
-
-
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
 
 .slide-content {
   position: absolute;
@@ -375,14 +327,6 @@
   line-height: 1.4;
 }
 
-/* Active Slide */
-.slide.active {
-  opacity: 1;
-  visibility: visible;
-  z-index: 5;
-}
-
-/* Responsive Adjustments for 10 Slides */
 @media screen and (max-width: 1200px) {
   .slide-content h1 {
     font-size: 90px;
@@ -439,8 +383,6 @@
 }
 
 /* === ABOUT SECTION === */
-
-
 .about-section {
   background-color: #ffffff;
 }
@@ -450,11 +392,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  flex-wrap: fixed;
+  flex-wrap: wrap; /* FIX: Changed from 'fixed' (invalid) to 'wrap' for mobile support */
   margin-bottom: 50px;
 }
 
-/* Reverse layout for even blocks */
 .about-block.reverse {
   flex-direction: row-reverse;
 }
@@ -462,8 +403,7 @@
 /* === TEXT CONTENT === */
 .text-content {
   max-width: 800px;
-
-
+  flex: 1; /* Helps dynamic sizing with images */
 }
 
 .text-content h3 {
@@ -515,10 +455,12 @@
 /* === IMAGE CONTENT === */
 .image-content {
   flex-shrink: 0;
+  max-width: 100%; /* Prevents mobile overflow */
 }
 
 .image-wrapper {
   width: 500px;
+  max-width: 100%; /* Keeps it responsive on mobile */
   height: 340px;
   overflow: hidden;
   border-top-left-radius: 180px;
@@ -568,6 +510,10 @@
     border-radius: 25px;
     margin-top: 20px;
   }
+  
+  .reverse .image-wrapper {
+    border-radius: 25px; /* Keeps curves consistent when stacked on mobile */
+  }
 }
 
 @media (max-width: 600px) {
@@ -581,31 +527,30 @@
   padding: 10px 0;
 }
 
-/* Container to hold heading and cards */
 .card-slider-container {
   display: flex;
-  flex-direction: column; /* stack heading and cards vertically */
-  align-items: center;    /* center horizontally */
+  flex-direction: column; 
+  align-items: center;    
   justify-content: flex-start;
-  padding: 50px 20px;    /* optional spacing around */
+  padding: 50px 20px;    
 }
 
-/* Slider Heading */
 .slider-heading {
   text-align: center;
   color: #000000;
   font-size: 2rem;
-  margin-bottom: 40px; /* space between heading and cards */
+  margin-bottom: 40px; 
   font-weight: 600;
   letter-spacing: 1px;
 }
 
 .card-slider {
   display: flex;
-  align-items: flex-start; /* Align cards at the top to remove extra bottom space */
+  flex-wrap: wrap; /* FIX: Added so cards wrap to the next line on mobile */
+  align-items: flex-start; 
   justify-content: center;
   gap: 30px;
-  padding: 0;   /* Remove extra padding */
+  padding: 0;   
   transition: all 0.3s ease;
 }
 
@@ -621,24 +566,25 @@
   cursor: pointer;
   transition: all 0.4s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  margin: 0;       /* Ensure no margin below cards */
-  padding: 0;      /* Ensure no padding inside card affecting layout */
-  display: flex;   /* Optional: if you want to center content inside card */
+  margin: 0;       
+  padding: 0;      
+  display: flex;   
   align-items: center; 
   justify-content: center;
 }
 
-
 .card h2 {
   position: absolute;
-  bottom: 15px;       /* distance from bottom */
-  left: 50%;          /* start from center horizontally */
-  transform: translateX(-50%); /* shift back by 50% of its width to truly center */
+  bottom: 15px;       
+  left: 50%;          
+  transform: translateX(-50%); 
   color: #000000;
   font-size: 1rem;
   letter-spacing: 1px;
   text-align: center;
+  width: 100%; /* Keeps text centered inside card */
 }
+
 .card:hover {
   transform: translateY(-8px);
 }
@@ -649,72 +595,11 @@
   box-shadow: 0 15px 25px rgba(0,0,0,0.6);
   z-index: 5;
 }
- @media (max-width: 1000px) {
-  .card-slider-section {
-    padding: 20px 0; /* Vertical padding only */
-    overflow: hidden; /* Prevent horizontal scroll on the whole page */
-  }
-
-  .slider-heading {
-    font-size: 1.4rem;
-    text-align: center;
-    margin-bottom: 15px;
-    padding: 0 15px;
-  }
-
-  .card-slider-container {
-    width: 100%;
-    padding: 10px 15px; /* Side padding so the first/last cards aren't flush to the edge */
-    box-sizing: border-box;
-  }
-
-  .card-slider {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory; /* Makes scrolling "snap" to cards */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
-    scrollbar-width: none; /* Hides scrollbar on Firefox */
-    padding-bottom: 10px; /* Space for the shadow */
-  }
-
-  /* Hide scrollbar for Chrome/Safari */
-  .card-slider::-webkit-scrollbar {
-    display: none;
-  }
-
-  .card {
-    flex: 0 0 110px; /* DO NOT GROW/SHRINK. Fixed width of 110px */
-    height: 150px;   /* Consistent height */
-    scroll-snap-align: start;
-    border-radius: 12px;
-    background-size: contain; /* Ensures the logos aren't cropped */
-    background-repeat: no-repeat;
-    background-color: #fff; /* White background for logos */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  /* Adjusting text for smaller cards */
-  .card h2 {
-    font-size: 0.75rem;
-    padding: 5px;
-    text-align: center;
-  }
-
-  /* Mobile interaction: subtle lift instead of massive expansion */
-  .card:active {
-    transform: scale(0.95);
-  }
-}
 
 /*CSS For Contact Form Starts here*/
 .contact-container {
   display: flex;
   justify-content: center; 
-  /* CHANGE 1: Change this line from 'flex-start' to 'center' */
   align-items: center; 
   border-radius: 20px;
   padding: 40px 5%;
@@ -727,7 +612,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styles */
 .contact-left {
   display: flex;
   flex-direction: column;
@@ -788,11 +672,9 @@
   background: #990b0b;
 }
 
-/* Contact Info Styles */
 .contact-right {
   flex: 1;
   width: 100%;
-  /* OPTIONAL ADDITION: This ensures info blocks stay left-aligned */
   display: flex;
   flex-direction: column;
 }
@@ -843,8 +725,6 @@
   cursor: pointer;
 }
 
-/* --- RESPONSIVENESS (with vertical stacking) --- */
-
 @media (max-width: 850px) {
   .contact-container {
     flex-direction: column;
@@ -874,17 +754,13 @@
   }
 }
 
-/* CSS for contact form ends here */
-
-
 /* === MAP SECTION STARTS HERE === */
-/* Google Maps Container */
 .map-container {
   margin-top: 3rem;
   margin-bottom: 3rem;
   max-width: 1050px;
-  width: 90%; /* Using 90% ensures a small gap on mobile edges */
-  height: 450px; /* Default height for tablets/laptops */
+  width: 90%; 
+  height: 450px; 
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -894,33 +770,28 @@
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  border: 0; /* Ensures no default iframe border */
+  border: 0; 
 }
 
-/* Responsive Adjustments */
-
-/* For Small Devices (Phones) */
 @media (max-width: 600px) {
   .map-container {
-    height: 300px; /* Shorter height so it doesn't bury your content */
+    height: 300px; 
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
 }
 
-/* For Large Screens (Desktops) */
 @media (min-width: 1200px) {
   .map-container {
-    height: 520px; /* Your original preferred height */
+    height: 520px; 
   }
 }
-/* === MAP SECTION ENDS HERE === */
 
 /* Footer Section CSS Starts Here*/
 .footer {
-  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  background-color: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+  -webkit-backdrop-filter: blur(10px); 
   padding: 1rem 1rem;
   text-align: center;
 }
@@ -945,7 +816,6 @@
 }
 
 footer p {
-  color: #9ca3af; /* Tailwind's gray-400 */
+  color: #9ca3af; 
   font-size: 0.875rem;
 }
-/* Footer Section CSS Ends Here*/
