@@ -18,145 +18,114 @@
   }
   
   
-  /* Navbar */
+  /* --- Navbar Base --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 60px; /* increased padding for more height and side gap */
+    padding: 15px 5%;
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
-   /* border-radius: 50px; /* added radius for rounded corners */
-    /*   margin: 10px; /* optional: adds space around navbar */
-    transition: background-color 0.s ease;
 }
-  
-  /* Logo */
-  .logo {
-    display: flex;
-    justify-content: center; /* Horizontally centers the content */
-    align-items: center; /* Vertically centers the content */
-  }
-  
-  .logo img {
-    max-width: 100%; /* Ensures the logo is responsive */
-    height: auto; /* Maintains the aspect ratio of the image */
-    width: 220px; /* Adjust this value to control the logo size */
-  }
-  
-  /* Navigation Links */
-  .nav-links {
+
+.logo img {
+    height: auto;
+    width: 180px;
+    display: block;
+}
+
+/* --- Navigation Links (Desktop) --- */
+.nav-links {
     display: flex;
     gap: 30px;
-    flex-grow: 1;
-    justify-content: center;
-  }
-  
-  .nav-links a {
+}
+
+.nav-links a {
     font-size: 18px;
     color: #1e40af;
-    font-weight: 650;
+    font-weight: 600;
     text-decoration: none;
-    transition: font-weight 0.3s ease, color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    font-weight: bold;
-    font-size: 19px;
-    color: #e11d48;
-    transform: translateY(-3px);
-  }
+    transition: all 0.3s ease;
+}
 
-  .header-right-box {
+.nav-links a:hover {
+    color: #e11d48;
+    transform: translateY(-2px);
+}
+
+/* --- Header Right Section --- */
+.header-right-box {
     display: flex;
-    margin-right: 30px;
     align-items: center;
-    padding: 15px 25px;
-    border-radius: 10px;
-    max-width: 400px;
     gap: 15px;
-  }
-  
-  .header-right-icon svg {
-    width: 40px;
-    height: 40px;
-    fill:  #1e40af;
-    transition: transform 0.3s ease;
-  }
-  
-  .header-right-icon svg:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-    fill: #e11d48;
-  }
-  
-  .header-right-content span {
-    font-style: normal;
+}
+
+.header-right-content span {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: #555;
-  }
-  
-  .header-right-content h4 {
-    margin: 0px 0 0;
-  }
-  
-  .header-right-content h4 a {
+}
+
+.header-right-content h4 a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #1e40af;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-  }
-  
-  .header-right-content h4 a:hover {
-    font-weight: bold;
-    font-size: 18px;
-    color: #e11d48;
-    }
-    .header-right-icon img {
-      color: #d61818;
-      width: 40px;
-      height: 40px;
-      transition: transform 0.3s ease;
-    }
-    
-    .header-right-icon a:hover img {
-      transform: scale(1.1);
-    }
-    
-  /* Contact Button 
-  .contact-btn a {
-    background-color: #1e3a8a;
-    color: #ffffff;
-    padding: 12px 24px;
-    border: 2px solid #1e40af;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s ease-in-out;
-  }
-  
-  .contact-btn a:hover {
-    background-color: #e11d48;
-    color: #ffffff;
-    border-color: #e11d48;
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
-  */
-  
-  
-  /* Hamburger Menu */
-  .hamburger {
-    display: none;
-    font-size: 1.8rem;
+}
+
+.hamburger {
+    display: none; /* Hidden on Desktop */
     cursor: pointer;
-  }
-  
+    width: 30px;
+    margin-left: 15px;
+}
+
+.hamburger img {
+    width: 100%;
+    display: block;
+}
+
+/* --- Responsive View --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; 
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        gap: 20px;
+    }
+
+    /* This class will be toggled via JS */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .header-right-content {
+        display: none; /* Hide phone text on small screens */
+    }
+    
+    .logo img {
+        width: 140px;
+    }
+}
+
+
+
+
 /* Slider Styles */
 .slider-wrapper {
   position: relative;
