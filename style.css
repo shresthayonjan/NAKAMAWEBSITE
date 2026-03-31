@@ -489,38 +489,9 @@ a {
   display: inline;
 }
 
-/* === RESPONSIVE DESIGN === */
-@media (max-width: 1000px) {
-  .container {
-    padding: 60px 40px;
-  }
-
-  .about-block {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-block.reverse {
-    flex-direction: column;
-  }
-
-  .image-wrapper {
-    width: 100%;
-    height: 240px;
-    border-radius: 25px;
-    margin-top: 20px;
-  }
-  
-  .reverse .image-wrapper {
-    border-radius: 25px; /* Keeps curves consistent when stacked on mobile */
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 40px 20px;
-  }
-}
+/* =========================================
+   1. DESKTOP & GENERAL STYLES (Base)
+   ========================================= */
 
 .card-slider-section {
   text-align: center;
@@ -529,28 +500,29 @@ a {
 
 .card-slider-container {
   display: flex;
-  flex-direction: column; 
-  align-items: center;    
+  flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
-  padding: 50px 20px;    
+  padding: 50px 20px;
 }
 
 .slider-heading {
   text-align: center;
   color: #000000;
   font-size: 2rem;
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
+/* Desktop Slider: Items stay side-by-side */
 .card-slider {
   display: flex;
-  flex-wrap: wrap; /* FIX: Added so cards wrap to the next line on mobile */
-  align-items: flex-start; 
+  flex-wrap: nowrap; /* Desktop usually stays in one row or scrolls */
+  align-items: flex-start;
   justify-content: center;
   gap: 30px;
-  padding: 0;   
+  padding: 0;
   transition: all 0.3s ease;
 }
 
@@ -560,29 +532,27 @@ a {
   height: 280px;
   border-radius: 15px;
   overflow: hidden;
-  background-size: contain;      
+  background-size: contain;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   cursor: pointer;
   transition: all 0.4s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  margin: 0;       
-  padding: 0;      
-  display: flex;   
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .card h2 {
   position: absolute;
-  bottom: 15px;       
-  left: 50%;          
-  transform: translateX(-50%); 
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   color: #000000;
   font-size: 1rem;
   letter-spacing: 1px;
   text-align: center;
-  width: 100%; /* Keeps text centered inside card */
+  width: 100%;
 }
 
 .card:hover {
@@ -592,9 +562,85 @@ a {
 .card.active {
   width: 240px;
   height: 320px;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   z-index: 5;
 }
+
+/* =========================================
+   2. TABLET VIEW (max-width: 1000px)
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 60px 40px;
+  }
+
+  /* Stack columns vertically */
+  .about-block, 
+  .about-block.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 240px;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
+
+  /* Allow cards to wrap if they don't fit the width */
+  .card-slider {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+/* =========================================
+   3. PHONE VIEW (max-width: 600px)
+   ========================================= */
+
+@media (max-width: 600px) {
+  .card-slider-container {
+    padding: 30px 10px; /* Reduced padding to give cards more room */
+  }
+
+  .slider-heading {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .card-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the row if 3 cards are narrower than the screen */
+    gap: 10px;               /* Reduced gap so 3 can fit side-by-side */
+    width: 100%;
+  }
+
+  /* To get 3 in a row: 
+     100% / 3 = 33.33%. 
+     Subtracting 10px to account for the gaps.
+  */
+  .card {
+    width: calc(33.33% - 10px); 
+    height: 140px;             /* Adjusted height to keep aspect ratio smaller */
+    min-width: 100px;          /* Prevents them from getting too squished */
+  }
+
+  /* Adjust active card for mobile */
+  .card.active {
+    width: calc(33.33% - 5px); 
+    height: 160px;
+    z-index: 5;
+  }
+
+  .card h2 {
+    font-size: 0.75rem;        /* Smaller text for smaller cards */
+    bottom: 8px;
+  }
+}
+
 
 /*CSS For Contact Form Starts here*/
 .contact-container {
