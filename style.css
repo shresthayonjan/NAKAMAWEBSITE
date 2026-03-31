@@ -651,64 +651,62 @@
 }
  @media (max-width: 1000px) {
   .card-slider-section {
-    padding: 15px 5px; /* Minimal side padding to save space */
+    padding: 20px 0; /* Vertical padding only */
+    overflow: hidden; /* Prevent horizontal scroll on the whole page */
   }
 
   .slider-heading {
-    font-size: 1.2rem; /* Smaller heading to keep focus on cards */
-    margin-bottom: 20px;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 15px;
   }
 
   .card-slider-container {
-    padding: 10px 5px;
     width: 100%;
+    padding: 10px 15px; /* Side padding so the first/last cards aren't flush to the edge */
+    box-sizing: border-box;
   }
 
   .card-slider {
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Centers the row of cards */
-    gap: 8px;               /* Very small gap to maximize card space */
-    width: 100%;
-    overflow: visible;      /* No scrolling needed if they all fit */
-    flex-wrap: nowrap;      /* Force them to stay on one line */
+    gap: 12px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory; /* Makes scrolling "snap" to cards */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    scrollbar-width: none; /* Hides scrollbar on Firefox */
+    padding-bottom: 10px; /* Space for the shadow */
+  }
+
+  /* Hide scrollbar for Chrome/Safari */
+  .card-slider::-webkit-scrollbar {
+    display: none;
   }
 
   .card {
-    /* Calculate width: (100% / number of cards) minus gap */
-    /* Adjust 'flex-basis' below based on how many cards you have */
-    flex: 1 1 auto; 
-    min-width: 0;           /* Allows cards to shrink below their content size */
-    width: 65px;            /* Narrow width to fit 4-5 cards */
-    height: 100px;          /* Proportionally smaller height */
-    border-radius: 8px;     /* Smaller radius for smaller cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 0 0 110px; /* DO NOT GROW/SHRINK. Fixed width of 110px */
+    height: 150px;   /* Consistent height */
+    scroll-snap-align: start;
+    border-radius: 12px;
+    background-size: contain; /* Ensures the logos aren't cropped */
+    background-repeat: no-repeat;
+    background-color: #fff; /* White background for logos */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
 
-  /* Ensure the background image fits perfectly inside the tiny card */
-  .card {
-    background-size: cover; 
-    background-position: center;
-  }
-
-  /* Scale down the text inside the cards */
+  /* Adjusting text for smaller cards */
   .card h2 {
-    font-size: 0.6rem;
-    bottom: 5px;
-    width: 90%;            /* Prevent text from hitting card edges */
-    line-height: 1;
+    font-size: 0.75rem;
+    padding: 5px;
+    text-align: center;
   }
 
-  /* Disable or minimize the 'active' expansion to prevent overlapping */
-  .card.active {
-    width: 80px; 
-    height: 120px;
-    z-index: 10;
-    transform: scale(1.1); /* Use scale instead of width/height for better performance */
-  }
-  
-  .card:hover {
-    transform: translateY(-4px);
+  /* Mobile interaction: subtle lift instead of massive expansion */
+  .card:active {
+    transform: scale(0.95);
   }
 }
 
