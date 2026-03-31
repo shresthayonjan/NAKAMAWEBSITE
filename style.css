@@ -615,16 +615,17 @@
 .contact-container {
   display: flex;
   justify-content: center; 
-  align-items: center;
+  /* CHANGE 1: Change this line from 'flex-start' to 'center' */
+  align-items: center; 
   border-radius: 20px;
-  padding: 1.5% 5%;
+  padding: 40px 5%;
   column-gap: 70px;
   background-color: #f9f9f9;
   max-width: 1050px;
-  width: 100%;
+  width: 90%;
   height: auto;
-  margin: 40px auto 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add this line */
+  margin: 40px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Form Styles */
@@ -632,20 +633,24 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1;
+  width: 100%;
 }
 
 .contact-inputs {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 42px;
   border: none;
   outline: none;
   padding-left: 25px;
-  font-family: 'poppins';
+  font-family: 'poppins', sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #666;
   border-radius: 20px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
 .contact-left textarea {
@@ -663,8 +668,8 @@
 }
 
 .contact-left button {
-  width: 80px;
-  height: 36px;
+  width: 120px;
+  height: 40px;
   background: #1e40af;
   color: white;
   border: none;
@@ -678,15 +683,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
 }
 
 .contact-left button:hover {
   background: #990b0b;
 }
 
-
 /* Contact Info Styles */
+.contact-right {
+  flex: 1;
+  width: 100%;
+  /* OPTIONAL ADDITION: This ensures info blocks stay left-aligned */
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-info h2 {
   font-size: 28px;
   font-weight: 850;
@@ -707,7 +718,6 @@
   font-size: 14px;
 }
 
-
 .icon {
   background: #1e40af;
   border-radius: 50%;
@@ -726,13 +736,46 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
-  display: block; /* <--- This helps center it */
+  display: block;
 }
 
 .icon:hover {
   background: #d61818;
   cursor: pointer;
 }
+
+/* --- RESPONSIVENESS (with vertical stacking) --- */
+
+@media (max-width: 850px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    width: 95%;
+  }
+
+  .contact-left, .contact-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-inputs {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info h2 {
+    font-size: 22px;
+  }
+  
+  .contact-container {
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+}
+
+/* CSS for contact form ends here */
 
 /* Google Maps Container */
 .map-container {
