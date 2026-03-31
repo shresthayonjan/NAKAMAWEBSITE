@@ -18,7 +18,7 @@
   }
   
   
-  /* --- Navbar Base --- */
+/* --- Navbar Base --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -36,6 +36,76 @@
     width: 180px;
     display: block;
 }
+
+
+/* --- Base Desktop Styles  --- */
+.header-right-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-right-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+  
+  /* 1. Remove the default gray tap highlight on mobile Chrome/Safari */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header-right-icon svg {
+  fill: #1e40af;
+  transition: fill 0.3s ease, filter 0.3s ease;
+  /* Ensure the icon doesn't shrink or grow weirdly */
+  flex-shrink: 0; 
+}
+
+/* Hover/Active States */
+.header-right-icon a:hover svg {
+  fill: #e11d48;
+  filter: drop-shadow(0 0 5px rgba(225, 29, 72, 0.3));
+}
+
+.header-right-icon a:hover {
+  transform: translateY(-2px);
+}
+
+.header-right-icon a:active {
+  transform: scale(0.95); /* Better feedback for touch than translateY */
+}
+
+/* --- Mobile Compatibility (Screens smaller than 768px) --- */
+@media (max-width: 768px) {
+  .header-right-icon a {
+    /* 2. Increase touch target size to at least 48x48px (UX best practice) */
+    width: 48px;
+    height: 48px;
+  }
+  
+  .header-right-icon svg {
+    /* 3. Slightly scale down the icon if it feels too big for mobile headers */
+    width: 32px;
+    height: 32px;
+  }
+
+  /* 4. Disable hover effects on touch devices to prevent "sticky" hover states */
+  @media (hover: none) {
+    .header-right-icon a:hover {
+      transform: none;
+    }
+    .header-right-icon a:hover svg {
+      filter: none;
+    }
+  }
+}
+
+
+/* --- Base Mobile Styles  --- */
+
+
 
 /* --- Navigation Links (Desktop) --- */
 .nav-links {
@@ -81,7 +151,7 @@
     display: none; /* Hidden on Desktop */
     cursor: pointer;
     width: 30px;
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
 .hamburger img {
@@ -122,6 +192,7 @@
         width: 140px;
     }
 }
+
 
 
 
@@ -746,6 +817,7 @@
 
 /* CSS for contact form ends here */
 
+
 /* === MAP SECTION STARTS HERE === */
 /* Google Maps Container */
 .map-container {
@@ -784,7 +856,6 @@
   }
 }
 /* === MAP SECTION ENDS HERE === */
-
 
 /* Footer Section CSS Starts Here*/
 .footer {
