@@ -365,7 +365,7 @@ a {
 @media screen and (max-width: 480px) {
   .slide-content h1 {
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     
   }
   .slide-content h2 {
