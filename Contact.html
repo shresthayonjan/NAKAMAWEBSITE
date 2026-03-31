@@ -12,20 +12,21 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <!-- Navbar -->
- <header class="navbar">
-    <div class="logo">
-      <a href="index.html" class="logo-link">
-       <!-- <img src="images/NAKAMA Web Logo Png-01.png" alt="Nakama Educational Consultancy Logo"> -->
-        <img src="NAKAMA Web Logo Png-02.png" alt="Nakama Educational Consultancy Logo"> 
-      </a>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="About.html">About Us</a>
-      <a href="Programs.html">Programs / Courses</a>
-      <a href="Services.html">Services</a>
-    </nav>
+   <!-- Navbar -->
+  <header class="navbar">
+  <div class="logo">
+    <a href="index.html" class="logo-link">
+      <img src="NAKAMA Web Logo Png-02.png" alt="Nakama Educational Consultancy Logo">
+    </a>
+  </div>
+
+  <nav class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="About.html">About Us</a>
+    <a href="Programs.html">Programs / Courses</a>
+    <a href="Services.html">Services</a>
+  </nav>
+
     <div class="header-right-box">
       <div class="header-right-icon">
         <a href="Contact.html" aria-label="Contact Us">
@@ -33,14 +34,19 @@
           <svg width="40" height="40" fill="#333" viewBox="0 0 24 24">
             <path d="M21 6.5a2.5 2.5 0 0 0-2.5-2.5h-13A2.5 2.5 0 0 0 3 6.5v11A2.5 2.5 0 0 0 5.5 20H6v3l3-3h9.5a2.5 2.5 0 0 0 2.5-2.5v-11zM5.5 5h13A1.5 1.5 0 0 1 20 6.5V7H4v-.5A1.5 1.5 0 0 1 5.5 5zm13 13H8.83L7 19.83V18H5.5A1.5 1.5 0 0 1 4 16.5V8h16v8.5a1.5 1.5 0 0 1-1.5 1.5z"/>
           </svg>
-        </a>
-      </div>
-      <div class="header-right-content">
-        <span>Any queries?</span>
-        <h4><a href="tel:+977-01-5914797">01-5914797</a></h4>
-      </div>
+      </a>
     </div>
-  </header>
+      
+    <div class="header-right-content">
+      <span>Any queries?</span>
+      <h4><a href="tel:+977-01-5914797">01-5914797</a></h4>
+    </div>
+    
+    <div class="hamburger" id="hamburger">
+      <img src="Hamburger.webp" alt="Menu" class="hamburger-icon">
+    </div>
+  </div>
+</header>
   <!-- Contact Section -->
   <div class="contact-container">
     <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
