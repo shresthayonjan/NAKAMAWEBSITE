@@ -649,7 +649,7 @@
   box-shadow: 0 15px 25px rgba(0,0,0,0.6);
   z-index: 5;
 }
- @media (max-width: 768px) {
+ @media (max-width: 600px) {
   .card-slider-section {
     padding: 15px 5px; /* Minimal side padding to save space */
   }
