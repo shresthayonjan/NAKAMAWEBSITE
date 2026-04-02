@@ -568,10 +568,11 @@ a {
   background-repeat: no-repeat;
   cursor: pointer;
   transition: all 0.4s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
 }
 
 .card h2 {
